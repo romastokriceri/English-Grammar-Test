@@ -102,20 +102,22 @@
             border-left: 4px solid #ffc107;
         }
         
-        .blank-input {
-            border: none;
-            border-bottom: 2px solid #667eea;
-            background: transparent;
+        .dropdown-select {
+            border: 2px solid #667eea;
+            background: white;
             padding: 5px 10px;
             margin: 0 5px;
             font-size: 1em;
+            border-radius: 5px;
             transition: border-color 0.3s ease;
-            min-width: 80px;
+            min-width: 120px;
+            cursor: pointer;
         }
         
-        .blank-input:focus {
+        .dropdown-select:focus {
             outline: none;
-            border-bottom-color: #ff6b6b;
+            border-color: #ff6b6b;
+            box-shadow: 0 0 5px rgba(255, 107, 107, 0.3);
         }
         
         .submit-section {
@@ -312,7 +314,7 @@
             </div>
 
             <div class="question">
-                <div class="question-text">9. I don't know if he'd been listening before I saw him.</div>
+                <div class="question-text">9. I don't know if <strong style="color: #ff6b6b; background: #fff3cd; padding: 2px 6px; border-radius: 4px;">he'd</strong> been listening before I saw him.</div>
                 <div class="options">
                     <div class="option">
                         <input type="radio" name="q9" value="a" id="q9a">
@@ -444,12 +446,99 @@
             </div>
 
             <div class="fill-blank">
-                <div class="question-text">15. Complete the story with the correct words:</div>
-                <p>On her first day off she <input type="text" class="blank-input" name="blank1" placeholder="(1)"> to just take it easy <input type="text" class="blank-input" name="blank2" placeholder="(2)"> sleep all day. <input type="text" class="blank-input" name="blank3" placeholder="(3)"> next day she <input type="text" class="blank-input" name="blank4" placeholder="(4)"> up with her friends and partied all night <input type="text" class="blank-input" name="blank5" placeholder="(5)">! The <input type="text" class="blank-input" name="blank6" placeholder="(6)"> morning she <input type="text" class="blank-input" name="blank7" placeholder="(7)"> a horrible headache because she <input type="text" class="blank-input" name="blank8" placeholder="(8)"> forgotten to drink plenty of <input type="text" class="blank-input" name="blank9" placeholder="(9)"> before going to bed. She <input type="text" class="blank-input" name="blank10" placeholder="(10)"> claims <input type="text" class="blank-input" name="blank11" placeholder="(11)"> she <input type="text" class="blank-input" name="blank12" placeholder="(12)"> on a diet! BS I say!</p>
-                
-                <div style="margin-top: 20px; font-size: 0.9em; color: #666;">
-                    <strong>Word bank:</strong> took/made/chose/decided, and/to/so/then, A/An/The/Ø, team/go/met/together, long/through/away/during, milk/cola/water, again/still/yet, like/that/so, am/is/the
-                </div>
+                <div class="question-text">15. Complete the story by choosing the correct words from the dropdown menus:</div>
+                <p style="line-height: 2; font-size: 1.1em;">
+                    On her first day off she 
+                    <select class="dropdown-select" name="blank1">
+                        <option value="">Choose...</option>
+                        <option value="decided">decided</option>
+                        <option value="took">took</option>
+                        <option value="made">made</option>
+                        <option value="chose">chose</option>
+                    </select>
+                    to just take it easy 
+                    <select class="dropdown-select" name="blank2">
+                        <option value="">Choose...</option>
+                        <option value="and">and</option>
+                        <option value="to">to</option>
+                        <option value="so">so</option>
+                        <option value="then">then</option>
+                    </select>
+                    sleep all day. 
+                    <select class="dropdown-select" name="blank3">
+                        <option value="">Choose...</option>
+                        <option value="A">A</option>
+                        <option value="An">An</option>
+                        <option value="The">The</option>
+                        <option value="Ø">Ø (no article)</option>
+                    </select>
+                    next day she 
+                    <select class="dropdown-select" name="blank4">
+                        <option value="">Choose...</option>
+                        <option value="team">team</option>
+                        <option value="go">go</option>
+                        <option value="meet">met</option>
+                        <option value="together">together</option>
+                    </select>
+                    up with her friends and partied all night 
+                    <select class="dropdown-select" name="blank5">
+                        <option value="">Choose...</option>
+                        <option value="long">long</option>
+                        <option value="through">through</option>
+                        <option value="away">away</option>
+                        <option value="during">during</option>
+                    </select>
+                    ! The 
+                    <select class="dropdown-select" name="blank6">
+                        <option value="">Choose...</option>
+                        <option value="next">next</option>
+                        <option value="following">following</option>
+                        <option value="other">other</option>
+                    </select>
+                    morning she 
+                    <select class="dropdown-select" name="blank7">
+                        <option value="">Choose...</option>
+                        <option value="had">had</option>
+                        <option value="got">got</option>
+                        <option value="felt">felt</option>
+                    </select>
+                    a horrible headache because she 
+                    <select class="dropdown-select" name="blank8">
+                        <option value="">Choose...</option>
+                        <option value="had">had</option>
+                        <option value="has">has</option>
+                        <option value="have">have</option>
+                    </select>
+                    forgotten to drink plenty of 
+                    <select class="dropdown-select" name="blank9">
+                        <option value="">Choose...</option>
+                        <option value="water">water</option>
+                        <option value="milk">milk</option>
+                        <option value="cola">cola</option>
+                    </select>
+                    before going to bed. She 
+                    <select class="dropdown-select" name="blank10">
+                        <option value="">Choose...</option>
+                        <option value="still">still</option>
+                        <option value="again">again</option>
+                        <option value="yet">yet</option>
+                    </select>
+                    claims 
+                    <select class="dropdown-select" name="blank11">
+                        <option value="">Choose...</option>
+                        <option value="that">that</option>
+                        <option value="like">like</option>
+                        <option value="so">so</option>
+                    </select>
+                    she 
+                    <select class="dropdown-select" name="blank12">
+                        <option value="">Choose...</option>
+                        <option value="is">is</option>
+                        <option value="am">am</option>
+                        <option value="the">the</option>
+                    </select>
+                    on a diet! BS I say!
+                </p>
             </div>
 
             <div class="submit-section">
@@ -478,14 +567,27 @@
             q11: 'c', // should have waited (modal perfect)
             q12: 'd', // were (past simple, plural)
             q13: 'c', // is going to (prediction based on evidence)
-            q14: 'a'  // will (spontaneous decision)
+            q14: 'a',  // will (spontaneous decision)
+            // Fill-in-the-blank answers
+            blank1: 'decided',
+            blank2: 'and',
+            blank3: 'The',
+            blank4: 'meet',
+            blank5: 'long',
+            blank6: 'next',
+            blank7: 'had',
+            blank8: 'had',
+            blank9: 'water',
+            blank10: 'still',
+            blank11: 'that',
+            blank12: 'is'
         };
 
         function checkAnswers() {
             const form = document.getElementById('testForm');
             const formData = new FormData(form);
             let score = 0;
-            let totalQuestions = 14;
+            let totalQuestions = 26; // 14 multiple choice + 12 fill-in-the-blank
             let feedback = [];
 
             // Check multiple choice questions
@@ -498,6 +600,19 @@
                     feedback.push(`Question ${i}: ✅ Correct`);
                 } else {
                     feedback.push(`Question ${i}: ❌ Incorrect (Correct answer: ${correctAnswer})`);
+                }
+            }
+
+            // Check fill-in-the-blank questions
+            for (let i = 1; i <= 12; i++) {
+                const userAnswer = formData.get(`blank${i}`);
+                const correctAnswer = correctAnswers[`blank${i}`];
+                
+                if (userAnswer === correctAnswer) {
+                    score++;
+                    feedback.push(`Blank ${i}: ✅ Correct`);
+                } else {
+                    feedback.push(`Blank ${i}: ❌ Incorrect (Correct answer: ${correctAnswer})`);
                 }
             }
 
